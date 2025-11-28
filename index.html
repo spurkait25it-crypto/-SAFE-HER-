@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SAFE HER - App</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyA4kLKwY7MKcwZJBCR_6wvA6RXSE32on-c",
+    authDomain: "safe-her-a0f53.firebaseapp.com",
+    databaseURL: "https://safe-her-a0f53-default-rtdb.firebaseio.com/",
+    projectId: "safe-her-a0f53",
+    storageBucket: "safe-her-a0f53.appspot.com",
+    messagingSenderId: "680263498886",
+    appId: "1:680263498886:web:33bcb03fe927f29b1c2507"
+};
+
+firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+
+<div class="card" id="app">
+  <h1 class="title-3d">SAFE HER</h1>
+<!-- Moving line under SAFE HER -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    "YOUR SAFTEY ,OUR PRIORITY" -> ✅ "আপনার নিরাপত্তা, আমাদের প্রথম অগ্রাধিকার"
+    
+  </div>
+</div>
+
+
+
+<div class="row">
+  <button id="contactsBtn" class="btn small">Safety Contacts</button>
+  <button id="placesBtn" class="btn small">Nearby Safety Places</button>
+</div>
+
+  <!-- LOGIN / REGISTER -->
+  <div id="loginBox" class="box">
+    <h3>প্রথমবার রেজিস্টার / লগইন</h3>
+
+    <input id="nameInput" placeholder="Full name" />
+    <input id="phoneInput" placeholder="Your phone (WhatsApp)" />
+    <input id="contactInput" placeholder="Safety contact(s)" />
+    <input id="pinInput" placeholder="Set 4-digit PIN" maxlength="4" />
+
+    <button id="saveBtn" class="btn">Save & Continue</button>
+  </div>
+
+  <!-- HOME SCREEN -->
+  <div id="homeBox" class="box hidden">
+
+       <button id="helpBtn" class="btn help">HELP ME 🚨</button>
+    <button id="cancelBtn" class="btn cancel">Cancel ✖</button>
+<p class="demo-text">This is a demo app — more features coming soon.</p>
+
+    <div id="status">Status: Idle</div>
+
+    <video id="video" autoplay playsinline muted></video>
+    <img id="preview" class="preview">
+
+    <div class="hint">Allow camera & location</div>
+  </div>
+</div>
+
+<!-- Hidden form for Google Sheet (optional) -->
+<form id="regForm" class="hidden">
+  <input id="reg_name_field" type="hidden">
+  <input id="reg_phone_field" type="hidden">
+  <input id="reg_contacts_field" type="hidden">
+  <input id="reg_pin_field" type="hidden">
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
